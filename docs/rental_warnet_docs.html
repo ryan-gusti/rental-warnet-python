@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <title>rental_warnet_docs.py</title>
+  <link rel="stylesheet" href="pycco.css">
+</head>
+<body>
+<div id='container'>
+  <div id="background"></div>
+  <div class='section'>
+    <div class='docs'><h1>rental_warnet_docs.py</h1></div>
+  </div>
+  <div class='clearall'>
+  <div class='section' id='section-0'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-0'>#</a>
+      </div>
+      <h3><span id="dokumentasi-untuk-program-rental-warnet-maju-jaya" href="dokumentasi-untuk-program-rental-warnet-maju-jaya"> Dokumentasi untuk Program Rental Warnet Maju Jaya </span></h3>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span></span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-1'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-1'>#</a>
+      </div>
+      <p>Mengimport library datetime yang berfungsi untuk konversi string menjadi satuan jam</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="kn">import</span> <span class="nn">datetime</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-2'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-2'>#</a>
+      </div>
+      <h3>List Fungsi pada program ini</h3>
+<p>Fungsi untuk mengkonversi dari string menjadi satuan jam menggunakan library datetime</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">def</span> <span class="nf">konversi</span><span class="p">(</span><span class="n">jam</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">jam</span><span class="p">,</span> <span class="s1">&#39;%H:%M&#39;</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-3'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-3'>#</a>
+      </div>
+      <p>Fungsi untuk menghitung selisih penyewaan yang didapatkan dari jam mulai dan jam selesai</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">def</span> <span class="nf">selisih</span><span class="p">(</span><span class="n">mulai</span><span class="p">,</span> <span class="n">selesai</span><span class="p">):</span>
+    <span class="n">hasil</span> <span class="o">=</span> <span class="n">selesai</span> <span class="o">-</span> <span class="n">mulai</span>
+    <span class="n">lama_jam</span> <span class="o">=</span> <span class="n">hasil</span><span class="o">.</span><span class="n">days</span> <span class="o">*</span> <span class="mi">24</span> <span class="o">+</span> <span class="n">hasil</span><span class="o">.</span><span class="n">seconds</span> <span class="o">/</span> <span class="mi">3600</span>
+    <span class="k">return</span> <span class="n">lama_jam</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-4'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-4'>#</a>
+      </div>
+      <p>Fungsi untuk menghitung total bayar penyewa dengan cara mengkali total jam sewa dengan Rp3000</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">def</span> <span class="nf">hitung_bayar</span><span class="p">(</span><span class="n">lama_jam</span><span class="p">):</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="n">lama_jam</span> <span class="o">*</span> <span class="mi">3000</span>
+    <span class="k">return</span> <span class="n">total</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-5'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-5'>#</a>
+      </div>
+      <p>Fungsi untuk menampilkan data pembayaran untuk penyewa komputer</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">def</span> <span class="nf">pembayaran</span><span class="p">(</span><span class="n">nama</span><span class="p">,</span> <span class="n">notelp</span><span class="p">,</span> <span class="n">lama_jam</span><span class="p">,</span> <span class="n">total</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;- Data Pembayaran -&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nama Pembeli : &quot;</span><span class="p">,</span> <span class="n">nama</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nomor Telp Pembeli : &quot;</span><span class="p">,</span> <span class="n">notelp</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Lama Jam Sewa : &quot;</span><span class="p">,</span> <span class="n">lama_jam</span><span class="p">,</span> <span class="s2">&quot;jam&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Total Bayar : Rp&quot;</span><span class="p">,</span> <span class="n">total</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-6'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-6'>#</a>
+      </div>
+      <h3>Menu Awal Program</h3>
+<p>Ucapan selamat datang dan perintah untuk mengisi inputan yang berisi
+list variabel untuk menyimpan data penyewa</p>
+<ol>
+<li><strong>nama</strong> - untuk menyimpan nama penyewa</li>
+<li><strong>notelp</strong> - untuk menyimpan nomor telpon penyewa</li>
+<li><strong>mulai</strong> - untuk menyimpan jam mulai sewa</li>
+<li><strong>selesai</strong> - untuk menyimpan jam selesai sewa</li>
+</ol>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Selamat Datang di Warnet Maju Jaya&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Silahkan Isi Data Berikut&quot;</span><span class="p">)</span>
+<span class="n">nama</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Nama Anda : &quot;</span><span class="p">)</span>
+<span class="n">notelp</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Nomor Telepon Anda : &quot;</span><span class="p">)</span>
+<span class="n">mulai</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Input Jam Mulai Sewa : &quot;</span><span class="p">,)</span>
+<span class="n">selesai</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Input Jam Selesai Sewa : &quot;</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-7'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-7'>#</a>
+      </div>
+      <h3>Algoritma pada program</h3>
+<ol>
+<li>mengkonversi nilai string pada variabel <strong>mulai</strong> dan <strong>selesai</strong></li>
+<li>menghitung selisih dari kedua variabel tersebut dengan cara menguranginya</li>
+<li>menghitung total bayar yang didapatkan dari selisih dan dikali 3000</li>
+<li>menampilkan hasil pada pembayaran</li>
+</ol>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="n">mulai</span> <span class="o">=</span> <span class="n">konversi</span><span class="p">(</span><span class="n">mulai</span><span class="p">)</span>
+<span class="n">selesai</span> <span class="o">=</span> <span class="n">konversi</span><span class="p">(</span><span class="n">selesai</span><span class="p">)</span>
+<span class="n">lama_jam</span> <span class="o">=</span> <span class="n">selisih</span><span class="p">(</span><span class="n">mulai</span><span class="p">,</span> <span class="n">selesai</span><span class="p">)</span>
+<span class="n">total</span> <span class="o">=</span> <span class="n">hitung_bayar</span><span class="p">(</span><span class="n">lama_jam</span><span class="p">)</span>
+<span class="n">pembayaran</span><span class="p">(</span><span class="n">nama</span><span class="p">,</span> <span class="n">notelp</span><span class="p">,</span> <span class="n">lama_jam</span><span class="p">,</span> <span class="n">total</span><span class="p">)</span>
+
+</pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+</div>
+</body>
